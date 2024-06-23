@@ -1,168 +1,428 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tony Cui</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body >
+    <h1 style="font-weight: bold;"> Tony Cui's Portfolio
+    </h1>
+
+
+    About section here
+    <div>
+        Rising Senior at Duke University Studying B.S. Computer Science & B.S. Economics
+    </div>
+
+    <br>
+
+    <h1>
+        Past Internships!
+    </h1>
+
+Barclays - Summer 2024
+//probably add pictures under each internship here
+
+
+<br>
+
+Morgan Stanley - Summer 2023
+<br>
+
+
+Optum, UnitedHealth Group - Summer 2022
+
+
+
+
+    <h1>
+        Projects!!!
+    </h1>
+    <div>
+        NYT Competitive Connections
+        <p>
+            Inspired by the New York Times connections game released daily, this project allows users to compete against each other in a friendly competitive manner. 
+        </p>
+        <p>
+            Created with JavaScript, TypeScript, HTML/CSS, Vue.js, MongoDB, Docker, Kubernetes, and PlayWright
+        </p>
+    </div>
+
+
+    <br>
+    <div>
+        Slavery Appraisal Data Visualization
+        <p>
+            As part of a final project for my Slavery and Capitalism class, I created a data visualization that models the appraisal of slaves in the 19th century across time. Check it out here: 
+        </p>
+        <p>
+            Created with JavaScript, d3.js, and HTML/CSS
+        </p>
+    </div>
+    
+
+
+    <script>
+
+    </script>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Data Visualization</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tony Cui Personal Website</title>
     <style>
-        .tooltip {
-            position: absolute;
-            background-color: white;
-            border: 1px solid black;
-            padding: 5px;
-            display: none;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            padding-top: 5px; /* Adjust this as needed */
+            font-size: 1.5em;
+        }
+        header p {
+            margin: 0;
+            margin-bottom: 10px; /* Adjust this as needed */
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2em;
+            color: #4CAF50;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #4CAF50;
+            display: block;
+            margin: 10px auto 0;
+        }
+        .intro {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+        }
+        .intro-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .intro-text h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .intro-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .intro-image {
+            flex: 1;
+            text-align: center;
+        }
+        .intro-image img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .projects, .experience, .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px;
+            padding: 20px;
+            width: 30%;
+            box-sizing: border-box;
+            transition: transform 1s ease-in-out, box-shadow 1s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: 45%;
+            }
+            .intro {
+                flex-direction: column;
+            }
+            .intro-text {
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+            .intro-image img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                width: 100%;
+            }
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-in-up.hide {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .landing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #222;
+            color: #f4f4f4;
+            text-align: center;
+            transition: opacity 0.5s ease;
+        }
+        .landing h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .landing p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .landing button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .landing button:hover {
+            background-color: #45a049;
+        }
+        /* Hide the landing screen when transitioning to the portfolio */
+        .hide {
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <div class="title-box">
-        <p class="title-text"> 
-            US Slave Appraisals
-        </p>
+    <!-- Landing Screen -->
+    <section class="landing">
+        <h1>Welcome to Tony Cui's Portfolio</h1>
+        <p>Click below to explore</p>
+        <button id="exploreButton">Explore</button>
+    </section>
+
+    <!-- Portfolio Content (Initially hidden) -->
+    <section id="portfolioContent" class="container hide">
+    <header>
+        <div class="container">
+            <h1>Tony (Anthony) Cui</h1>
+            <p>New Graduate Software Developer</p>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#technologies">Technologies</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+          <!-- Introduction Section -->
+          <section class="intro" id="intro">
+            <div class="intro-text fade-in-up">
+                <h2>About Me</h2>
+                <p>Hi, I'm [Your Name], a professional software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success. With a strong foundation in various programming languages and technologies, I am adept at creating solutions that cater to diverse business needs.</p>
+            </div>
+            <div class="intro-image fade-in-up">
+                <img src="your-image-url.jpg" alt="Your Name">
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <h2 class="section-title fade-in-up">Projects</h2>
+            <div class="projects">
+                <div class="card fade-in-up">
+                    <h3>Project Title 1</h3>
+                    <p>Description of the project. Highlight key features and technologies used.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Project Title 2</h3>
+                    <p>Description of the project. Highlight key features and technologies used.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Project Title 3</h3>
+                    <p>Description of the project. Highlight key features and technologies used.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section class="section" id="experience">
+            <h2 class="section-title fade-in-up">Experience</h2>
+            <div class="experience">
+                <div class="card fade-in-up">
+                    <h3>Job Title 1</h3>
+                    <p>Company Name</p>
+                    <p>Dates of Employment</p>
+                    <p>Brief description of your role and responsibilities.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Job Title 2</h3>
+                    <p>Company Name</p>
+                    <p>Dates of Employment</p>
+                    <p>Brief description of your role and responsibilities.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Job Title 3</h3>
+                    <p>Company Name</p>
+                    <p>Dates of Employment</p>
+                    <p>Brief description of your role and responsibilities.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Technologies Section -->
+        <section class="section" id="technologies">
+            <h2 class="section-title fade-in-up">Technologies</h2>
+            <div class="technologies">
+                <div class="card fade-in-up">
+                    <h3>Technology 1</h3>
+                    <p>Brief description of your proficiency and experience with this technology.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Technology 2</h3>
+                    <p>Brief description of your proficiency and experience with this technology.</p>
+                </div>
+                <div class="card fade-in-up">
+                    <h3>Technology 3</h3>
+                    <p>Brief description of your proficiency and experience with this technology.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <h2 class="section-title fade-in-up">Contact</h2>
+            <div style="text-align: center;" class="fade-in-up">
+                <p>Email: <a href="mailto:yourname@example.com">yourname@example.com</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+            </div>
+        </section>
     </div>
+</section>
 
-    <!-- Create a container for the graph -->
-    <div id="container"></div>
+    <footer>
+        <p>&copy; 2024 Tony Cui. All rights reserved.</p>
+    </footer>
 
-    <!-- Create toggle switch -->
-    <label class="switch">
-        <input id="toggle" type="checkbox">
-        <span class="slider"></span>
-    </label>
-    <span id="toggle-label">Use CPI in 2014</span>
-
-    <!-- Add buttons for filtering by age -->
-    <button onclick="filterByAge(0, 10)">Filter by Age 0-10</button>
-    <button onclick="filterByAge(11, 22)">Filter by Age 11-22</button>
-    <button onclick="filterByAge(23, 39)">Filter by Age 23-39</button>
-    <button onclick="filterByAge(40, 100)">Filter by Age 40+</button>
-
-    <div class="title-box">
-        <p style="text-align: center; font-weight: bold;">
-            Berry Slave Value Database
-        </p>
-    </div>
-
-    <div class="tooltip" id="tooltip"></div>
-
-    <!-- Load D3.js -->
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    
-    <!-- Load custom JavaScript -->
     <script>
-        // Function to filter data by age
-        function filterByAge(minAge, maxAge) {
-            const filteredData = data.filter(d => {
-                const age = parseFloat(d.age);
-                return age >= minAge && age <= maxAge;
+        document.addEventListener('DOMContentLoaded', function() {
+            const landingSection = document.querySelector('.landing');
+            const portfolioSection = document.querySelector('#portfolioContent');
+            const exploreButton = document.querySelector('#exploreButton');
+
+            exploreButton.addEventListener('click', function() {
+                // Hide landing screen
+                landingSection.classList.add('hide');
+                // Show portfolio content
+                portfolioSection.classList.remove('hide');
             });
-            updateData(filteredData);
-        }
+            
+            const observerOptions = {
+                threshold: 0.1
+            };
 
-        // Declare the chart dimensions and margins.
-        const width = 800;
-        const height = 600; // Increased size
-        const marginTop = 50; // Adjusted margins
-        const marginRight = 50;
-        const marginBottom = 100;
-        const marginLeft = 100;
+            const fadeInElements = document.querySelectorAll('.fade-in-up');
 
-        // Create the SVG container.
-        const svg = d3.select("#container").append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        // Function to update data and redraw the graph
-        function updateData(filteredData) {
-            // Remove existing SVG elements
-            svg.selectAll("*").remove();
-
-            // Calculate the new width and height of the chart area
-            const chartWidth = width - marginLeft - marginRight;
-            const chartHeight = height - marginTop - marginBottom;
-
-            // Create x scale
-            const x = d3.scaleTime()
-                .domain(d3.extent(filteredData, d => d.year))
-                .range([0, chartWidth]);
-
-            // Create y scale
-            const y = d3.scaleLinear()
-                .domain([0, d3.max(filteredData, d => d.appraisal)])
-                .range([chartHeight, 0]);
-
-            // Append SVG container for the chart area
-            const chart = svg.append("g")
-                .attr("transform", `translate(${marginLeft},${marginTop})`);
-
-            // Add x-axis
-            chart.append("g")
-                .attr("class", "x-axis")
-                .attr("transform", `translate(0,${chartHeight})`)
-                .call(d3.axisBottom(x).ticks(5));
-
-            // Add x-axis label
-            chart.append("text")
-                .attr("class", "x-axis-label")
-                .attr("text-anchor", "middle")
-                .attr("x", chartWidth / 2)
-                .attr("y", chartHeight + 40) // Adjusted position
-                .text("Year");
-
-            // Add y-axis
-            chart.append("g")
-                .attr("class", "y-axis")
-                .call(d3.axisLeft(y));
-
-            // Add y-axis label
-            chart.append("text")
-                .attr("class", "y-axis-label")
-                .attr("text-anchor", "middle")
-                .attr("transform", "rotate(-90)")
-                .attr("x", -chartHeight / 2)
-                .attr("y", -60) // Adjusted position
-                .text("CPI");
-
-            // Plot the data points
-            chart.selectAll("circle")
-                .data(filteredData)
-                .enter().append("circle")
-                .attr("cx", d => x(d.year)) // Correctly assign x-values based on the date scale
-                .attr("cy", d => y(d.appraisal))
-                .attr("r", 5)
-                .on("click", function(d) {
-                    showTooltip(d);
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        entry.target.classList.remove('hide');
+                    } else {
+                        entry.target.classList.remove('show');
+                        entry.target.classList.add('hide');
+                    }
                 });
-        }
+            }, observerOptions);
 
-        // Function to show tooltip
-        function showTooltip(data) {
-            const tooltip = document.getElementById('tooltip');
-            tooltip.innerHTML = `Name: ${data.name}<br>Age: ${data.age}<br>State: ${data.state}`;
-            tooltip.style.display = 'block';
-            tooltip.style.left = (d3.event.pageX + 10) + 'px';
-            tooltip.style.top = (d3.event.pageY - 10) + 'px';
-        }
-
-        // Read the CSV data.
-        let data;
-
-        // Fetch data
-        d3.csv("berry-data.csv").then(csvData => {
-            data = csvData;
-            data.forEach(d => {
-                d.year = new Date(+d.year, 0, 1); // Parse year as date
-                d.appraisal = +d['app.cpi.2014']; // Parse appraisal value
+            fadeInElements.forEach(element => {
+                observer.observe(element);
             });
-            updateData(data); // Initial draw with default data
-
-            // Add event listener to toggle switch
-            document.getElementById('toggle').addEventListener('change', function() {
-                updateData(data);
-            });
-        }).catch(error => {
-            console.log("Error loading data:", error);
         });
     </script>
 </body>
 </html>
+
