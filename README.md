@@ -1,4 +1,5 @@
-# Personal Portfolio Website!
+# slave-appraisal-datavis
 
-Accessible via "https://tonyyyycui.github.io/"
-Created with HTML, CSS, and Javascript
+Final Project for ECON330S: Slavery and Capitalism
+
+In this data visualization, you will discover trends based on variables.

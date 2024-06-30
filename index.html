@@ -78,13 +78,16 @@ Optum, UnitedHealth Group - Summer 2022
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tony Cui Personal Website</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        * {
+            box-sizing: border-box; /* Ensure all elements respect boundaries */
+        }
+        html, body {
+            height: 100%;
             margin: 0;
-            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            overflow-x: hidden;
         }
         header {
             background-color: #4CAF50;
@@ -122,12 +125,13 @@ Optum, UnitedHealth Group - Summer 2022
             background: rgba(255, 255, 255, 0.2);
         }
         .container {
-            width: 80%;
+            width: 100%; /* Ensure container width is 100% */
             margin: 0 auto;
             overflow: hidden;
+            padding: 0; /* Remove padding to ensure no white space */
         }
         .section {
-            padding: 60px 0;
+            padding: 60px 20px; /* Add padding for inner content, not container */
         }
         .section-title {
             text-align: center;
@@ -148,7 +152,9 @@ Optum, UnitedHealth Group - Summer 2022
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 60px 0;
+            /* padding: 60px 0; */
+            padding-top: 100px;
+            padding-left: 50px;
         }
         .intro-text {
             flex: 1;
@@ -165,6 +171,8 @@ Optum, UnitedHealth Group - Summer 2022
         .intro-image {
             flex: 1;
             text-align: center;
+            padding-top: 50px;
+            padding-left: 20px;
         }
         .intro-image img {
             border-radius: 50%;
@@ -249,14 +257,24 @@ Optum, UnitedHealth Group - Summer 2022
             color: #f4f4f4;
             text-align: center;
             transition: opacity 0.5s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
         }
         .landing h1 {
             font-size: 3em;
             margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards; /* Animation for fade-in */
         }
         .landing p {
             font-size: 1.5em;
             margin-bottom: 40px;
+            opacity: 0;
+           animation: fadeIn 2s ease-out 0.5s forwards; /* Animation for fade-in */
         }
         .landing button {
             padding: 10px 20px;
@@ -267,6 +285,9 @@ Optum, UnitedHealth Group - Summer 2022
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            opacity:0;
+            animation: fadeIn 2s ease-out 1s forwards; /* Animation for fade-in */
+
         }
         .landing button:hover {
             background-color: #45a049;
@@ -275,6 +296,17 @@ Optum, UnitedHealth Group - Summer 2022
         .hide {
             opacity: 0;
             pointer-events: none;
+        }
+        /* Keyframes for fadeIn animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -304,11 +336,13 @@ Optum, UnitedHealth Group - Summer 2022
           <!-- Introduction Section -->
           <section class="intro" id="intro">
             <div class="intro-text fade-in-up">
+                <div style="padding-left: 50px;" >
                 <h2>About Me</h2>
-                <p>Hi, I'm [Your Name], a professional software engineer with a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success. With a strong foundation in various programming languages and technologies, I am adept at creating solutions that cater to diverse business needs.</p>
+                <p>Hi, I'm Tony Cui, a senior at Duke University studying in B.S. Computer Science and B.S. Economics. I am a software engineer with a passion for solving problems and developing innovative solutions that have real-world applications. With a strong foundation in various programming languages and technologies, I am adept at creating solutions that cater to diverse business needs.</p>
+            </div>
             </div>
             <div class="intro-image fade-in-up">
-                <img src="your-image-url.jpg" alt="Your Name">
+                <img src="Screen Shot 2024-06-29 at 11.26.08 PM.png" alt="Tony Cui">
             </div>
         </section>
         <!-- Projects Section -->
@@ -398,6 +432,8 @@ Optum, UnitedHealth Group - Summer 2022
                 landingSection.classList.add('hide');
                 // Show portfolio content
                 portfolioSection.classList.remove('hide');
+                // Allow scrolling
+                document.body.style.overflow = 'auto';
             });
             
             const observerOptions = {
@@ -425,4 +461,5 @@ Optum, UnitedHealth Group - Summer 2022
     </script>
 </body>
 </html>
+
 
