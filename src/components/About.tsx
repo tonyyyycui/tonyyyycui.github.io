@@ -14,7 +14,7 @@ export const About = () => {
             More About <span className="text-blue-600">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Beyond the code - here's what makes me tick! 🚀
+            A glimpse into the experiences and passions that shape who I am!
           </p>
         </div>
 

@@ -6,26 +6,28 @@ import { ExternalLink, Github } from "lucide-react";
 
 export const Projects = () => {
   const projects = [
+    
     {
+      title: "NYT Competitive Connections",
+      description: "Full-stack web app for a real-time multiplayer puzzle game with end-to-end testing and CI/CD integration.",
+      tech: ["JavaScript", "TypeScript", "Vue.js", "MongoDB", "Kubernetes", "Docker", "socket.io"],
+      image: "/placeholder.svg",
+      featured: true,
+      link: "https://tinyurl.com/connection-project"
+    },
+    {
+      title: "QuantNest Robo-Advisor",
+      description: "Python-based robo-advisor that automates portfolio optimization using quant models and backtesting frameworks.",
+      tech: ["Python", "Pandas", "Interactive Broker", "DashUI", "Backtesting", "Data Pipelines"],
+      image: "/placeholder.svg",
+      featured: true,
+      link: "https://tinyurl.com/quantnest"
+    },{
       title: "OpenAI Code Assistant",
       description: "AI-powered coding assistant that helps developers write, debug, and optimize code using OpenAI's GPT models.",
       tech: ["Python", "OpenAI API", "Flask", "JavaScript", "HTML/CSS"],
       image: "/placeholder.svg",
       featured: true
-    },
-    {
-      title: "Personal Finance Tracker",
-      description: "Web application for tracking expenses, budgeting, and financial goal setting with data visualization.",
-      tech: ["React", "Node.js", "MongoDB", "D3.js", "JWT"],
-      image: "/placeholder.svg",
-      featured: true
-    },
-    {
-      title: "Task Management System",
-      description: "Collaborative project management tool with real-time updates and team coordination features.",
-      tech: ["React", "Firebase", "Material-UI", "WebSocket"],
-      image: "/placeholder.svg",
-      featured: false
     }
   ];
 
@@ -40,9 +42,8 @@ export const Projects = () => {
             Featured <span className="text-blue-600">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Projects I enjoyed building
-          </p>
-        </div>
+                A showcase of technical projects I enjoyed working on!
+                </p> </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {featuredProjects.map((project, index) => (

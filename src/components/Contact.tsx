@@ -27,8 +27,8 @@ export const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/tonycui1",
-      action: () => window.open('https://github.com/tonycui1', '_blank'),
+      value: "github.com/tonyyyycui",
+      action: () => window.open('https://github.com/tonyyyycui', '_blank'),
       color: "text-gray-800",
       hoverColor: "hover:bg-gray-50"
     }
@@ -37,17 +37,17 @@ export const Contact = () => {
   return (
     <section id="contact" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-indigo-50 relative overflow-hidden">
       {/* Floating elements */}
-      <div className="absolute top-16 right-20 w-8 h-8 bg-blue-300 rounded-full opacity-20 animate-bounce"></div>
-      <div className="absolute bottom-24 left-16 w-6 h-6 bg-indigo-400 rounded-full opacity-30 animate-pulse"></div>
+      {/* <div className="absolute top-16 right-20 w-8 h-8 bg-blue-300 rounded-full opacity-20 animate-bounce"></div>
+      <div className="absolute bottom-24 left-16 w-6 h-6 bg-indigo-400 rounded-full opacity-30 animate-pulse"></div> */}
       
       <div className="max-w-4xl mx-auto text-center">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Let's <span className="text-blue-600">Connect!</span>
           </h2>
-          <p className="text-lg text-muted-foreground mb-4">
+          {/* <p className="text-lg text-muted-foreground mb-4">
             Ready for new opportunities and exciting projects
-          </p>
+          </p> */}
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <MapPin className="h-4 w-4 text-blue-600" />
             <span>Based in New York City, NY</span>
