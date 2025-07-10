@@ -83,7 +83,7 @@ export const Hero = () => {
               </h2>
             </div>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-4">
-              I'm always looking for opportunities to build scalable applications and solve complex problems with elegant code.
+              I'm always looking for opportunities to build impactful applications and solve complex problems.
             </p>
             <p className="text-base text-blue-600 font-medium">
               Ready for new opportunities and exciting projects
