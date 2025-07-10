@@ -38,7 +38,7 @@ export const About = () => {
                   Favorite Courses:
                 </p>
                 <p className="text-sm text-muted-foreground pl-6">
-                  Machine Learning, iOS Development, Web Development, 
+                  Machine Learning, Web Development, Natural Language Processing,
                   Algorithm Design, and Database Systems
                 </p>
               </div>
@@ -60,14 +60,14 @@ export const About = () => {
                   <Puzzle className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-800">Puzzles & Problem Solving</p>
-                    <p className="text-sm text-muted-foreground">Love tackling complex challenges and finding elegant solutions</p>
+                    <p className="text-sm text-muted-foreground">Love tackling complex challenges and discovering solutions</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Trophy className="h-5 w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-medium text-gray-800">College Basketball</p>
-                    <p className="text-sm text-muted-foreground">Passionate fan who enjoys the strategy and competition</p>
+                    <p className="text-sm text-muted-foreground">Huge Duke Blue Devil fan who enjoys competition</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -75,7 +75,7 @@ export const About = () => {
                   <div>
                     <p className="font-medium text-gray-800">Game Theory & Development</p>
                     <p className="text-sm text-muted-foreground">
-                      Building games and exploring strategic thinking - check out my work at{" "}
+                      Building games and exploring strategic thinking. Check out some of my games at{" "}
                       <a 
                         href="https://kaeque.itch.io" 
                         target="_blank" 

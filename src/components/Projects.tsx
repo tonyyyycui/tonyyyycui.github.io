@@ -11,17 +11,17 @@ export const Projects = () => {
       title: "NYT Competitive Connections",
       description: "Full-stack web app for a real-time multiplayer puzzle game with end-to-end testing and CI/CD integration.",
       tech: ["JavaScript", "TypeScript", "Vue.js", "MongoDB", "Kubernetes", "Docker", "socket.io"],
-      image: "/placeholder.svg",
+      image: "/connectionsimage.png",
       featured: true,
-      link: "https://tinyurl.com/connection-project"
+      github: "https://coursework.cs.duke.edu/anthony.cui/competitive-connections"
     },
     {
       title: "QuantNest Robo-Advisor",
       description: "Python-based robo-advisor that automates portfolio optimization using quant models and backtesting frameworks.",
       tech: ["Python", "Pandas", "Interactive Broker", "DashUI", "Backtesting", "Data Pipelines"],
-      image: "/placeholder.svg",
+      image: "/simulation.png",
       featured: true,
-      link: "https://tinyurl.com/quantnest"
+      github: "https://github.com/tonyyyycui/quantnest"
     },{
       title: "OpenAI Code Assistant",
       description: "AI-powered coding assistant that helps developers write, debug, and optimize code using OpenAI's GPT models.",
@@ -67,12 +67,14 @@ export const Projects = () => {
                     </Badge>
                   ))}
                 </div>
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Demo
-                  </Button>
-                </div>
+                {project.github && (
+  <Button variant="outline" size="sm" asChild>
+    <a href={project.github} target="_blank" rel="noopener noreferrer">
+      <Github className="mr-2 h-4 w-4" />
+      GitHub
+    </a>
+  </Button>
+)}
               </CardContent>
             </Card>
           ))}
